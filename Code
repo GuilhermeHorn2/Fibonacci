@@ -1,0 +1,14 @@
+def fib(n):
+    if n == 1 or n == 2:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+# memoization of fib
+def mfib(n,m={}):
+    if n in m:
+        return m[n]
+    if n == 1 or n == 2:
+        return 1
+    m[n] = mfib(n-1) + mfib(n-2)
+    return m[n]
